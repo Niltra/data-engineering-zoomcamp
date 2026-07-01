@@ -18,7 +18,8 @@
 **/google-*.json
 
 # Carpetas de claves
-**/keys/
+**/keys/*
+!**/keys/.gitignore
 
 # Archivos de secretos Java (Kafka, etc.)
 **/Secrets.java

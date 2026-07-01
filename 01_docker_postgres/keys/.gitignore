@@ -1,0 +1,3 @@
+# Ignorar todo en esta carpeta (contiene credenciales GCP)
+*
+!.gitignore

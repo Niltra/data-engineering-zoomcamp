@@ -1,0 +1,19 @@
+id: ingesta_gcp_yellow_taxi
+namespace: zoomcamp
+
+inputs:
+  - id: url_dataset
+    type: STRING
+    defaults: "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+
+tasks:
+  - id: extraccion_local
+    type: io.kestra.plugin.core.http.Download
+    uri: "{{ inputs.url_dataset }}"
+
+  - id: carga_gcs
+    type: io.kestra.plugin.gcp.gcs.Upload
+    from: "{{ outputs.extraccion_local.uri }}"
+    to: "gs://de-zoomcamp-2026-500215-terra-bucket/raw/yellow_tripdata_2021-01.csv.gz"
+    serviceAccount: "{{ kv('GCP_CREDS') }}"
+    projectId: "de-zoomcamp-2026-500215"
