@@ -1,19 +1,199 @@
+# ============================================================================
+# CREDENCIALES Y SECRETS (MÁXIMA PRIORIDAD)
+# ============================================================================
 
-.DS_Store
-.idea
+# Archivos de credenciales GCP / Service Accounts
+**/my-creds.json
+**/google_credentials.json
+**/gcs.json
+**/*-key.json
+**/*-keys.json
+**/*key*.json
+**/*credential*.json
+**/*service-account*.json
+**/*serviceaccount*.json
+**/service-account.json
+**/serviceaccount.json
+**/gcp-*.json
+**/google-*.json
+
+# Carpetas de claves
+**/keys/
+
+# Archivos de secretos Java (Kafka, etc.)
+**/Secrets.java
+
+# Certificados y claves privadas
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.jks
+*.keystore
+*.truststore
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.pub
+
+# Variables de entorno
+**/.env
+**/.env.*
+!**/.env-example
+!**/.env_example
+!**/.env.example
+**/*.env
+!**/*.env-example
+!**/*.env_example
+
+# ============================================================================
+# TERRAFORM
+# ============================================================================
 *.tfstate
 *.tfstate.*
-**.terraform
-**.terraform.lock.*
-**google_credentials.json
-**logs/
-**.env
-**__pycache__/
-.history
-**/ny_taxi_postgres_data/*
-serving_dir
-.ipynb_checkpoints/
-!week_6_stream_processing/avro_example/data/rides.csv
+**/.terraform/
+**/.terraform.lock.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# ============================================================================
+# PYTHON
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+week6_venv/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pyenv
+# .python-version  # Kept for project consistency
+
+# ============================================================================
+# DBT
+# ============================================================================
+**/target/
+**/dbt_packages/
+**/dbt_internal_packages/
+**/profiles.yml
+**/.user.yml
+*.duckdb
+*.duckdb.wal
+**/.duckdb_temp/
+
+# ============================================================================
+# DOCKER Y DATOS LOCALES
+# ============================================================================
+**/ny_taxi_postgres_data/
+**/postgres-data/
+**/pgadmin-data/
+serving_dir/
+
+# ============================================================================
+# DATOS Y ARCHIVOS GRANDES
+# ============================================================================
 *.parquet
 *.csv
 *.duckdb
+*.gz
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Excepciones: CSVs que son parte del material del curso
+!**/seeds/*.csv
+!**/resources/rides.csv
+!week_6_stream_processing/avro_example/data/rides.csv
+
+# ============================================================================
+# IDE Y EDITORES
+# ============================================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.history/
+*.sublime-project
+*.sublime-workspace
+
+# ============================================================================
+# SISTEMA OPERATIVO
+# ============================================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# ============================================================================
+# JUPYTER NOTEBOOKS
+# ============================================================================
+.ipynb_checkpoints/
+
+# ============================================================================
+# JAVA / GRADLE / MAVEN (para módulos de streaming)
+# ============================================================================
+**/target/
+*.class
+*.jar
+!**/gradle/wrapper/gradle-wrapper.jar
+*.war
+*.nar
+*.ear
+*.rar
+hs_err_pid*
+replay_pid*
+.gradle/
+
+# ============================================================================
+# LOGS
+# ============================================================================
+**/logs/
+*.log

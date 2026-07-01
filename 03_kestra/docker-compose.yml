@@ -1,0 +1,39 @@
+volumes:
+  kestra-data:
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: kestra-postgres
+    environment:
+      POSTGRES_DB: kestra
+      POSTGRES_USER: kestra
+      POSTGRES_PASSWORD: kestra_password
+    volumes:
+      - kestra-data:/var/lib/postgresql/data
+
+  kestra:
+    image: kestra/kestra:latest
+    container_name: kestra-server
+    ports:
+      - "8081:8080"
+    command: server standalone
+    depends_on:
+      - postgres
+    environment:
+      KESTRA_CONFIGURATION: |
+        kestra:
+          repository:
+            type: postgres
+          storage:
+            type: local
+            local:
+              base-path: /app/storage
+          queue:
+            type: postgres
+        datasources:
+          postgres:
+            url: jdbc:postgresql://postgres:5432/kestra
+            driverClassName: org.postgresql.Driver
+            username: kestra
+            password: kestra_password
