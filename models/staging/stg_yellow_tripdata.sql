@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized="view") }}
 
 select
     -- Identificadores
@@ -15,4 +15,4 @@ select
     -- Información de pago
     cast(total_amount as numeric) as total_amount
 
-from {{ source('staging', 'yellow_tripdata_partitioned_clustered') }}
+from {{ source("staging", "yellow_tripdata_partitioned_clustered") }}
