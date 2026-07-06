@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: staging
+    database: de-zoomcamp-2026-500215  # Tu ID de proyecto
+    schema: demo_dataset               # El nombre de tu dataset en BQ
+    tables:
+      - name: yellow_tripdata_partitioned_clustered
