@@ -9,13 +9,13 @@ terraform {
 
 provider "google" {
   credentials = file("./keys/my-creds.json")
-  project     = "de-zoomcamp-2026-500215"
+  project     = "<TU_PROJECT_ID>"
   region      = "europe-west1"
 }
 
 # 1. El Data Lake (Google Cloud Storage)
 resource "google_storage_bucket" "demo-bucket" {
-  name          = "de-zoomcamp-2026-500215-terra-bucket" # El nombre debe ser único en todo el mundo
+  name          = "<TU_BUCKET_NAME>" # El nombre debe ser único en todo el mundo
   location      = "EU"
   force_destroy = true
 

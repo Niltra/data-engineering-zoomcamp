@@ -14,6 +14,6 @@ tasks:
   - id: carga_gcs
     type: io.kestra.plugin.gcp.gcs.Upload
     from: "{{ outputs.extraccion_local.uri }}"
-    to: "gs://de-zoomcamp-2026-500215-terra-bucket/raw/yellow_tripdata_2021-01.csv.gz"
+    to: "gs://<TU_BUCKET_NAME>/raw/yellow_tripdata_2021-01.csv.gz"
     serviceAccount: "{{ kv('GCP_CREDS') }}"
-    projectId: "de-zoomcamp-2026-500215"
+    projectId: "<TU_PROJECT_ID>"

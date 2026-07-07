@@ -16,6 +16,7 @@
 **/serviceaccount.json
 **/gcp-*.json
 **/google-*.json
+**/de-zoomcamp-*.json
 
 # Carpetas de claves
 **/keys/*
