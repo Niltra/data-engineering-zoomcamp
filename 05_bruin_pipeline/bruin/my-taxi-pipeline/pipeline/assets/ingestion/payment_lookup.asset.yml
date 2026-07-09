@@ -1,0 +1,5 @@
+name: ingestion.payment_lookup
+type: bq.seed
+connection: google_cloud_platform
+parameters:
+  path: payment_lookup.csv

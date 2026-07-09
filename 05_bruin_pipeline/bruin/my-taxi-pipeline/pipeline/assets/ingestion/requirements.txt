@@ -1,0 +1,6 @@
+pandas
+pyarrow
+pandas-gbq
+google-cloud-bigquery
+db-dtypes
+pandas-gbq
